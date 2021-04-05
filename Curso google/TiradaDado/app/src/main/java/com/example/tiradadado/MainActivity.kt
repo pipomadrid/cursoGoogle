@@ -18,16 +18,32 @@ class MainActivity : AppCompatActivity() {
 
         //val rollButton: Button = findViewById(R.id.BotonTirar) esta forma está deprecada
 
-        val boton = binding.BotonTirar
+        val boton = binding.BotonTirar // selecciona el boton del layout
         boton.setOnClickListener { rollDice() }
+        rollDice()
     }
 
+    /**
+     * Tira el dado y refresca la pantalla con el resultado
+     */
     private fun rollDice() {
         //crea un dado de dos caras y tira el dado
         val dice = Dice(6)
         val diceRoll = dice.roll()
-        val texto = binding.tvDado
-        texto.text = diceRoll.toString()
+        val imagen = binding.imageView
+        //determina que recurso de iamgen usar segun lo que salga en la tirada
+        val drawableResource = when (diceRoll) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+           else-> R.drawable.dice_6
+        }
+        // acutaliza la imagen con el recurso correspondiente a la tirada
+        imagen.setImageResource(drawableResource)
+        //actualiza la descripcion de la imagen para ayuda de audio
+        imagen.contentDescription = diceRoll.toString()
     }
 }
 
