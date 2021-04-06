@@ -11,6 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.example.tiptime"
         minSdkVersion 30
         targetSdkVersion 30

@@ -1,7 +1,11 @@
 package com.example.tiptime
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.RadioGroup
 import com.example.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
@@ -24,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         //binding vincula la main acitvity con el layout para acceder a alos recursos como botones, textviws etc..
         //creamos un listener para qu cuando se pulse llame a la función calulateTip
         binding.calculateButton.setOnClickListener { calculateTip() }
+        binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ -> handleKeyEvent(view, keyCode)
+        }
 
 
     }
@@ -32,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     fun calculateTip() {
 
         // obtenemos el total de la cuenta y lo pasamos a string
-        val stringInTextField = binding.costOfService.text.toString()
+        val stringInTextField = binding.costOfServiceEditText.text.toString()
 
         // lo pasamos a una varible convirtiéndola a double pra poder operar con ella, si no puede parsear devuelve un null
         val cost = stringInTextField.toDoubleOrNull()
@@ -65,5 +71,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            // Hide the keyboard
+            val inputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+            return true
+        }
+        return false
+    }
 
 }
