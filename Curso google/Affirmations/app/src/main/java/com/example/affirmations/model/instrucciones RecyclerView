@@ -1,0 +1,11 @@
+
+
+Necesitamos:
+
+    1- crear un xml que será el diseño del recycler
+    2- Crear un recyclerView en el xml de la activity
+    3- Los items que vamos a mostrar, en este caso tenemos una data class affimartions que está en el
+        package model, creamos otra clase dentro del package data llamada datasource  donde crearemos
+        una lista de isntancias de affirmations
+    4 - necesitamos un apdater que preparará el recyclerView para ser mostrado y dentro del mismo tendremos un viewHolder
+        que es que realmente pinta el recyclerView.Viewholder representa una vista de un solo elemento
