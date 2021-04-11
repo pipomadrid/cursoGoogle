@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PracticaRecyclerView1</string>
+    <string name="bon_jovi">Bon Jovi</string>
+    <string name="steven_tyler">Steven Tyler</string>
+    <string name="freddy_mercury">Freddy Mercury</string>
+    <string name="david_coverdale">David Coverdale</string>
+    <string name="sebastian_bach">Sebastian Bach</string>
+    <string name="robert_plant">Robert Plant</string>
+    <string name="axl_rose">Axl Rose</string>
+</resources>

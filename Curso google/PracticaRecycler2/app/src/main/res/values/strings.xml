@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PracticaRecycler2</string>
+    <string name="frase1">soy la frase 1</string>
+    <string name="frase2">soy la frase 2</string>
+    <string name="frase3">soy la frase 3</string>
+    <string name="frase4">soy la frase 4</string>
+    <string name="frase5">soy la frase 5</string>
+    <string name="frase6">soy la frase 6</string>
+    <string name="frase7">soy la frase 7</string>
+    <string name="frase8">soy la frase 8</string>
+</resources>
