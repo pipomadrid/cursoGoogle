@@ -84,7 +84,10 @@ class WordAdapter(private val letterId: String, context: Context) :
         // Set the text of the WordViewHolder
         holder.button.text = item
         holder.button.setOnClickListener {
+            //transforma en URI el string de la direccion de busqueda guardada en detailactivity  mas la palabra
             val queryUrl: Uri = Uri.parse("${DetailActivity.SEARCH_PREFIX}${item}")
+            //En lugar de pasar un contexto pasamos un Intent.ACTION_VIEW, junto con el URI
+            //ACTION_VIEW es una intención genérica que toma un URI,
             val intent = Intent(Intent.ACTION_VIEW, queryUrl)
             context.startActivity(intent)
         }

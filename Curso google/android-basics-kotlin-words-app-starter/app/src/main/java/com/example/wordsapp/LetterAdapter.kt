@@ -66,7 +66,8 @@ class LetterAdapter :
         holder.button.setOnClickListener {
             val context = holder.view.context
             val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra(DetailActivity.LETTER, holder.button.text.toString())
+            //le pasamos el extra a la DetailActivity con el clave "letter" y el valor de la letra del botón pulsado
+            intent.putExtra(DetailActivity.LETTER, holder.button.text.toString())  //necesitamos el toString ya que el texto del botón es del tipo CharSequence(es una interfaz)
             context.startActivity(intent)
 
         }

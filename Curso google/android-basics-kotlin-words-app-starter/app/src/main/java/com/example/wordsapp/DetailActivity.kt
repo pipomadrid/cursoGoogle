@@ -24,6 +24,11 @@ import com.example.wordsapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
+
+    //ESTA ACTIVIDAD SE INICIA CUANDO SE PULSA UN BOTÓN DEL RECICLERVIEW  CON EL ADAPTADOR LETTERADAPTER
+    // DESDE EL ONBINDVIEWHOLDER LANZANDO UN INTENT
+
+
     companion object {
         const val LETTER = "letter"
         val SEARCH_PREFIX = "https://www.google.com/search?q="
@@ -37,6 +42,12 @@ class DetailActivity : AppCompatActivity() {
         // For example, a View with the id word_one is referenced as binding.wordOne
         val binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        //recogemos el extra que nos  ha pasado desde el letterAdapter
+        //intent es una propiedad de cuaalquier actividad
+        //los extras son de tipo Bundle
+        //intent y extras llevan ? por que pueder ser nulos, si intent es nulo no intentá acceder a extras  y si extras es nulo no intentará llamar a getString()
 
         val letterId = intent?.extras?.getString(LETTER).toString()
 
