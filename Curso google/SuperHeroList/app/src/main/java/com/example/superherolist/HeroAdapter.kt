@@ -14,7 +14,7 @@ class HeroAdapter(private val context: Context, val superHero: List<SuperHero>):
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroHolder {
-       val layoutInflater = LayoutInflater.from(parent.context)
+        val layoutInflater = LayoutInflater.from(parent.context)
         return HeroHolder(layoutInflater.inflate(R.layout.item_superhero, parent,false))
     }
 
